@@ -11,9 +11,8 @@ bool ifPrime(int n){
 }
 
 int main(){
-    int n;  cin>>n;
-    if(ifPrime(n))  cout<<"PRIME"<<endl;
-    else    cout<<"NOT PRIME"<<endl;
-
+    for(int i=2; i<=100; i++){
+        if(ifPrime(i))  cout<<i<<" ";
+    }
     return 0;
 }
