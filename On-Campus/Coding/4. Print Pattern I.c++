@@ -1,25 +1,34 @@
-#include <bits/stdc++.h>
-#include <math.h>
+/*
+
+    Pattern:
+        1
+       010
+      10101
+     0101010
+    101010101
+
+*/
+
+#include<bits/stdc++.h>
 
 using namespace std;
 
-int main()
-{
-    int i, j, h, space, x = 1;
-
-    cout<<"Enter the height: ";
-    cin>>h;
-
-    for (i = 1; i <= h; i++)
-    {
-        cout<<endl;
-        for (space = 1; space <= (h - i); space++)
-            cout<<" ";
-        for (j = 1; j <= i; j++)
-        {
-            cout<<x;
-            x = 1 - x;
+int main(){
+    int h;  cin>>h;
+    int rows=h, col=2*h-1, mid=(col+1)/2-1, lower=mid, upper=mid, k=1;
+    for(int i=0; i<rows; i++){
+        for(int j=0; j<col; j++){
+            if(j>=lower && j<=upper){
+                cout<<k;
+                k=1-k;
+            }
+            else{
+                cout<<" ";
+            }
         }
+        cout<<endl;
+        lower--;
+        upper++;
     }
     return 0;
 }
