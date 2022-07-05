@@ -1,0 +1,9 @@
+vector<int> preorderVector;
+
+void preorder(TreeNode *root){
+    if(root==NULL)  return;
+
+    preorderVector.push_back(root->val);
+    preorder(root->left);
+    preorder(root->right);
+}

@@ -1,0 +1,9 @@
+vector<int> inorderVector;
+
+void inorder(TreeNode *root){
+    if(root==NULL)  return;
+
+    inorder(root->left);
+    inorderVector.push_back(root->val);
+    inorder(root->right);
+}

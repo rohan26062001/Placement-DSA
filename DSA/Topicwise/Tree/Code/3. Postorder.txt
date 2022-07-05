@@ -1,0 +1,9 @@
+vector<int> postorderVector;
+
+void postorder(TreeNode *root){
+    if(root==NULL)  return;
+
+    postorderVector.push_back(root->val);
+    postorder(root->left);
+    postorder(root->right);
+}
